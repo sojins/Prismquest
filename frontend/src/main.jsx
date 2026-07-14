@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import ParentApp from './ParentApp';
+import MascotPanel from './MascotPanel';
 import './styles.css';
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? '/api';
@@ -58,6 +59,11 @@ function App() {
 
   const selectableMissions = useMemo(
     () => state.missions.filter((mission) => !['pending', 'approved'].includes(mission.status)),
+    [state.missions]
+  );
+
+  const approvedCount = useMemo(
+    () => state.missions.filter((mission) => mission.status === 'approved').length,
     [state.missions]
   );
 
@@ -120,6 +126,8 @@ function App() {
           <small>선택한 미션 +{selectedPoints} P</small>
         </div>
       </header>
+
+      <MascotPanel points={state.points} completed={approvedCount} />
 
       {error && <div className="notice error-notice">{error}</div>}
       {message && <div className="notice success-notice">{message}</div>}
