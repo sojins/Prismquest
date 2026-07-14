@@ -28,7 +28,7 @@ export default function MascotPanel({ points = 0, completed = 0 }) {
             </div>
           </article>
         ))}
-        <a className="book-link" href="/book">친구 도감 열기 →</a>
+        <a className="book-link" href="/book.html">친구 도감 열기 →</a>
       </div>
     </section>
   );
