@@ -50,9 +50,14 @@ button { font: inherit; }
   background: white;
   box-shadow: 0 10px 30px rgba(35, 25, 66, .08);
 }
+.status-panel { text-align: center; font-weight: 800; }
 .section-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .section-heading h2 { margin: 0 0 14px; }
 .section-heading span { font-size: .9rem; color: #766b91; }
+
+.notice { margin-top: 14px; padding: 12px 14px; border-radius: 14px; font-weight: 750; }
+.error-notice { color: #991b1b; background: #fee2e2; }
+.success-notice { color: #166534; background: #dcfce7; }
 
 .mission-list { display: grid; gap: 10px; }
 .mission {
@@ -68,8 +73,13 @@ button { font: inherit; }
   cursor: pointer;
 }
 .mission.done { background: #f1eaff; border-color: #a78bfa; }
+.mission.locked { opacity: .72; cursor: default; }
 .check { font-size: 1.35rem; color: #7c3aed; }
-.mission-title { font-weight: 750; }
+.mission-title { display: flex; flex-direction: column; gap: 4px; font-weight: 750; }
+.status { width: fit-content; padding: 3px 8px; border-radius: 999px; font-size: .72rem; }
+.status.pending { color: #92400e; background: #fef3c7; }
+.status.approved { color: #166534; background: #dcfce7; }
+.status.rejected { color: #9f1239; background: #ffe4e6; }
 .points { font-weight: 900; color: #db2777; }
 
 .primary {
@@ -83,6 +93,8 @@ button { font: inherit; }
   background: #7c3aed;
   cursor: pointer;
 }
+.primary:disabled { cursor: default; background: #c4b5fd; }
+.text-button { display: block; margin: 10px auto 0; border: 0; background: transparent; color: #6d28d9; font-weight: 800; cursor: pointer; }
 
 .reward-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .reward-card { padding: 16px; border-radius: 16px; background: #fff7fb; border: 1px solid #fbcfe8; }
@@ -90,6 +102,13 @@ button { font: inherit; }
 .reward-card span { margin: 8px 0 14px; color: #be185d; font-weight: 900; }
 .reward-card button { width: 100%; padding: 10px; border: 0; border-radius: 10px; background: #ec4899; color: white; font-weight: 800; }
 .reward-card button:disabled { background: #d8d2df; }
+
+.empty { margin: 4px 0 0; color: #766b91; }
+.ledger-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ledger-list li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee8f7; }
+.ledger-list li:last-child { border-bottom: 0; }
+.positive { color: #15803d; }
+.negative { color: #be123c; }
 
 @media (max-width: 600px) {
   .hero { flex-direction: column; }
