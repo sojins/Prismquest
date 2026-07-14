@@ -1,0 +1,5 @@
+node_modules/
+frontend/dist/
+backend/data/*.sqlite
+backend/config.local.php
+.DS_Store
