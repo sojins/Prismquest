@@ -43,6 +43,69 @@ button, input { font: inherit; }
 }
 .score-card strong { font-size: 1.8rem; margin: 4px 0; }
 
+.mascot-panel {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff7ed, #fdf2f8);
+  border: 1px solid #fed7aa;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, .08);
+}
+.mascot-panel.rival {
+  background: linear-gradient(135deg, #f5f3ff, #fdf2f8);
+  border-color: #ddd6fe;
+}
+.mascot-featured {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.mascot-avatar {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  border-radius: 24px;
+  font-size: 3.25rem;
+  background: rgba(255,255,255,.78);
+  box-shadow: inset 0 0 0 1px rgba(124,58,237,.08);
+}
+.mascot-kicker {
+  margin: 0 0 4px;
+  color: #9a3412;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.mascot-panel.rival .mascot-kicker { color: #6d28d9; }
+.mascot-featured h2 { margin: 0; font-size: 1.2rem; }
+.mascot-featured blockquote {
+  margin: 8px 0 0;
+  color: #5b476b;
+  font-weight: 750;
+}
+.mascot-roster {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+.mascot-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid transparent;
+}
+.mascot-chip.active { border-color: #c4b5fd; box-shadow: 0 6px 16px rgba(124,58,237,.1); }
+.mascot-chip > span { font-size: 1.55rem; }
+.mascot-chip strong, .mascot-chip small { display: block; }
+.mascot-chip small { margin-top: 2px; color: #766b91; }
+
 .panel {
   margin-top: 18px;
   padding: 20px;
@@ -145,6 +208,9 @@ button, input { font: inherit; }
 
 @media (max-width: 600px) {
   .hero { flex-direction: column; }
+  .mascot-featured { align-items: flex-start; }
+  .mascot-avatar { width: 72px; height: 72px; flex-basis: 72px; font-size: 2.6rem; }
+  .mascot-roster { grid-template-columns: 1fr; }
   .reward-grid { grid-template-columns: 1fr; }
   .approval-card { align-items: stretch; flex-direction: column; }
   .approval-actions button { flex: 1; }
