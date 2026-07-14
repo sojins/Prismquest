@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import ParentApp from './ParentApp';
 import './styles.css';
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? '/api';
@@ -126,7 +127,7 @@ function App() {
       <section className="panel">
         <div className="section-heading">
           <h2>오늘의 미션</h2>
-          <span>{selectableMissions.length}개 도전 가능</span>
+          <a className="parent-link" href="/parent">부모 승인</a>
         </div>
         <div className="mission-list">
           {state.missions.map((mission) => {
@@ -199,4 +200,5 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+const root = createRoot(document.getElementById('root'));
+root.render(window.location.pathname.startsWith('/parent') ? <ParentApp /> : <App />);
