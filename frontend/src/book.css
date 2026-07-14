@@ -1,0 +1,18 @@
+.book-shell { width: min(900px, 100%); }
+.book-hero { align-items: center; background: linear-gradient(135deg, #6d28d9, #db2777); }
+.hero-link, .book-link { color: inherit; font-weight: 900; text-decoration: none; }
+.hero-link { padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.18); }
+.book-link { grid-column: 1 / -1; text-align: center; padding: 10px; color: #6d28d9; }
+.profile-art-panel { overflow: hidden; padding: 0; }
+.profile-art-panel img { display: block; width: 100%; height: auto; }
+.book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+.book-card { padding: 20px; border-radius: 22px; background: white; box-shadow: 0 10px 30px rgba(35,25,66,.08); }
+.book-card.warm { border: 1px solid #fed7aa; background: #fffaf5; }
+.book-card.rival { border: 1px solid #ddd6fe; background: #faf8ff; }
+.book-card-head { display: flex; align-items: center; gap: 14px; }
+.book-card-head h2 { margin: 3px 0 0; }
+.book-card-head small { color: #766b91; font-weight: 800; }
+.book-emoji { font-size: 3rem; }
+.quote-list { margin-top: 16px; }
+.quote-list p { margin: 8px 0; padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.75); }
+@media (max-width: 600px) { .book-grid { grid-template-columns: 1fr; } }
